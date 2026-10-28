@@ -1,0 +1,286 @@
+/* NorthPeakDigiStudio — static SEO site
+   Fast, mobile-first, no tracking. */
+
+:root {
+  --bg: #f7f5f1;
+  --surface: #ffffff;
+  --ink: #1a2332;
+  --muted: #5a6577;
+  --line: #e4e0d8;
+  --accent: #0f6b5c;
+  --accent-dark: #0a4f44;
+  --accent-soft: #e6f3f0;
+  --warn: #7a4a12;
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(26, 35, 50, 0.06), 0 8px 24px rgba(26, 35, 50, 0.06);
+  --max: 720px;
+  --max-wide: 1040px;
+  --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 1.05rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; }
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--accent-dark); }
+
+.wrap {
+  width: min(100% - 2rem, var(--max-wide));
+  margin-inline: auto;
+}
+
+.article.wrap,
+.narrow.wrap { width: min(100% - 2rem, var(--max)); }
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.logo:hover { color: var(--accent); }
+
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+nav a:hover { color: var(--accent); }
+
+.hero {
+  padding: 3rem 0 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 0 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 650;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  margin: 0.25rem 0.35rem 0.25rem 0;
+}
+.btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn-ghost {
+  background: transparent;
+  color: var(--accent) !important;
+}
+.btn-ghost:hover {
+  background: var(--accent-soft);
+  color: var(--accent-dark) !important;
+}
+
+.section { padding: 2rem 0 2.5rem; }
+
+.section h2 {
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+.card h3 a { color: var(--ink); text-decoration: none; }
+.card h3 a:hover { color: var(--accent); }
+.card p { margin: 0; color: var(--muted); font-size: 0.95rem; flex: 1; }
+.card .price {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.card .tags {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.meta { color: var(--muted); font-size: 0.92rem; margin: 0 0 1.5rem; }
+
+.prose h2 {
+  margin-top: 2rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+.prose h3 {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+.prose p { margin: 0.85rem 0; }
+.prose ul, .prose ol { padding-left: 1.25rem; }
+.prose li { margin: 0.35rem 0; }
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.prose .footer-note {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th { background: var(--accent-soft); font-weight: 700; }
+tr:last-child td { border-bottom: 0; }
+
+.cta-box {
+  margin: 2.5rem 0 1rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--accent-soft);
+  border: 1px solid #c9e4dd;
+  border-radius: var(--radius);
+}
+.cta-box h2 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+
+.note {
+  background: #fff8e8;
+  border: 1px solid #f0dfb8;
+  color: var(--warn);
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 0.95rem;
+}
+.site-footer .muted { color: var(--muted); }
+
+.product-list { list-style: none; padding: 0; margin: 0; }
+.product-list li {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+}
+.product-list .info { flex: 1 1 16rem; }
+.product-list h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+.product-list h3 a { color: var(--ink); text-decoration: none; }
+.product-list h3 a:hover { color: var(--accent); }
+.product-list .desc { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.product-list .price { font-weight: 700; white-space: nowrap; }
+
+.coming {
+  opacity: 0.92;
+  border-style: dashed;
+}
+
+@media (max-width: 560px) {
+  body { font-size: 1rem; }
+  .hero { padding-top: 2rem; }
+  nav { gap: 0.75rem; }
+}

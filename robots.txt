@@ -1,0 +1,7 @@
+# Replace https://samyzain-dot.github.io with your live origin (no trailing slash), e.g. https://northpeakdigistudio.pages.dev
+# One-shot: see README.md (reads base_url.txt)
+
+User-agent: *
+Allow: /
+
+Sitemap: https://samyzain-dot.github.io/sitemap.xml
